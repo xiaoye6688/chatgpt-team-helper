@@ -83,7 +83,6 @@ const totalRevenue = computed(() => {
   if (!overview.value) return 0
   return (
     Number(overview.value.purchaseOrders?.paidAmount || 0) +
-    Number(overview.value.creditOrders?.paidAmount || 0) +
     Number(overview.value.xhsOrders?.amount?.range || 0) +
     Number(overview.value.xianyuOrders?.amount?.range || 0)
   )
@@ -213,7 +212,7 @@ onMounted(async () => {
             <CardContent class="p-5 space-y-2">
               <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">总营收</p>
               <p class="text-2xl font-bold text-gray-900">¥{{ formatMoney(totalRevenue) }}</p>
-              <p class="text-xs text-gray-500">按区间汇总（支付 + Credit + 小红书 + 闲鱼）</p>
+              <p class="text-xs text-gray-500">按区间汇总（支付 + 小红书 + 闲鱼）</p>
             </CardContent>
           </Card>
 
